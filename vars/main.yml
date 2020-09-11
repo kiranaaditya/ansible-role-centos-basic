@@ -1,2 +1,22 @@
 ---
-# vars file for ansible-role-centos-basic
+# vars file for centos_default
+
+default_packages_for_centos:
+- telnet
+- vim
+- nmap
+- iotop
+- wget
+- curl
+- perl
+- cpp
+- gcc
+- make
+- bzip2
+- kernel-headers
+- kernel-devel
+- elfutils-libelf-devel
+- cifs-utils
+- nfs-utils
+- rsync
+- net-tools
