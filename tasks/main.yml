@@ -16,6 +16,11 @@
     name: "{{ default_packages_for_centos }}"
     state: present
 
+- name: Installing kernel-headers for the current linux version.
+  yum:
+    name: "kernel-devel-{{ kernel_release.stdout }}"
+    state: present
+
 # Virtual box tool installation
 
 - name: Check if Virtualbox is running on the guest VM.
