@@ -30,6 +30,8 @@
 - include_tasks: virtualbox.yml
   when: virtualbox_check.stat.exists
 
+- include_tasks: python3.yml
+
 # Clean up tasks
 # warn=false to prevent ansible warning using the command
 - name: Remove unneeded packages
@@ -45,6 +47,11 @@
     yum clean all
     warn=false 
   changed_when: true
+
+- name: Remove the python3 files and directories.
+  shell: >
+    /bin/rm -rf /home/vagrant/Python-3.8.5*
+    warn=false
 
 - name: Remove any remnants of VirtualBox ISOs.
   shell: >
