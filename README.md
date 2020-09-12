@@ -1,7 +1,7 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+This is just a test role, not built fully for production.
 
 Requirements
 ------------
