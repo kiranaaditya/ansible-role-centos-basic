@@ -6,11 +6,6 @@
   changed_when: false
   register: kernel_release
 
-- name: Update the existing packages.
-  yum:
-    name: '*'
-    state: latest
-
 - name: Installing necessary packages
   yum:
     name: "{{ default_packages_for_centos }}"
@@ -18,8 +13,8 @@
 
 - name: Installing kernel-headers for the current linux version.
   yum:
-    #name: "kernel-devel-{{ kernel_release.stdout }}"
-    name: kernel-devel*
+    name: "kernel-devel-{{ kernel_release.stdout }}"
+    #name: kernel-devel*
     state: present
 
 # Virtual box tool installation
