@@ -18,7 +18,8 @@
 
 - name: Installing kernel-headers for the current linux version.
   yum:
-    name: "kernel-devel-{{ kernel_release.stdout }}"
+    #name: "kernel-devel-{{ kernel_release.stdout }}"
+    name: kernel-devel*
     state: present
 
 # Virtual box tool installation
@@ -48,10 +49,10 @@
     warn=false 
   changed_when: true
 
-#- name: Remove the python3 files and directories.
-#  shell: >
-#    /bin/rm -rf /home/vagrant/Python-3.8.5*
-#    warn=false
+- name: Remove the python3 files and directories.
+  shell: >
+    /bin/rm -rf /home/vagrant/Python-3.8.5.tgz
+    warn=false
 
 - name: Remove any remnants of VirtualBox ISOs.
   shell: >
